@@ -1,0 +1,41 @@
+// this file is a scripted pipeline rinnign by jenkins, the job running with parameter, and we use the value of this parameters inside a shell command, the parameters look like this " some text ${param} "
+
+
+def main() {
+    docker1()
+}
+
+def docker1() {
+    node(label: 'jenkins') {
+        properties([parameters([string(defaultValue: '58', name: 'port'), string(defaultValue: 'app3', name: 'name')])])
+        stage('remove all running containers') {
+            sh 'docker rm -f $(docker ps -a -q)'
+        }
+    }
+    docker2()
+}
+
+def docker2() {
+    node(label: 'jenkins') {
+        properties([parameters([string(defaultValue: '58', name: 'port'), string(defaultValue: 'app3', name: 'name')])])
+        stage('Deply my application as a container') {
+            sh "docker run --name app3 -d --rm -p ${port}:80  nginx"
+        }
+    }
+    docker3()
+}
+
+def docker3() {
+    node(label: 'jenkins') {
+        stage(name: 'check if the container os running') {
+            properties([parameters([string(defaultValue: '58', name: 'port'), string(defaultValue: 'app3', name: 'name')])])
+            sh 'docker ps -a'
+            sh "curl localhost:${port} "
+        }
+    }
+}
+
+
+
+
+return this
