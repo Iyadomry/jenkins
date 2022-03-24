@@ -1,3 +1,4 @@
+import hudson.model.*
 def main() {
     git()
 
