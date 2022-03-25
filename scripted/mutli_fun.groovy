@@ -11,7 +11,13 @@ def first() {
         stage('clone git repo') {
             echo ' stage of git'
               withGroovy {
-                println 'hi'
+                    class Foo {
+                        def bar() {
+                            println "baz"
+                        }
+                    }
+                foo = new Foo() 
+                foo.bar()  
             }
 
         }
