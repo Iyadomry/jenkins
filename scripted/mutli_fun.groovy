@@ -10,6 +10,7 @@ def first() {
             echo ' stage of git'
         }
     }
+    sendmail()
 }
 
 
