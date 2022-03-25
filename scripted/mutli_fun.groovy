@@ -19,7 +19,9 @@ def first() {
     node('jenkins') {
         stage('clone git repo') {
             echo ' stage of git'
-            foo.bar()
+            withGroovy {
+                foo.bar()
+            }
         }
     }
     next()
