@@ -8,14 +8,18 @@ def first() {
     node('jenkins') {
         stage('clone git repo') {
             echo ' stage of git'
-            mail bcc: '', body: ' JenkinsReport', cc: '', from: '', replyTo: '', subject: 'Jenkins report', to: 'iyad.omryx@gmail.com'
         }
     }
-    next()
+    sendmail()
 }
 
-def next() {
-    echo 'test 2'
+
+
+def sendmail() {
+    node('jenkins')
+    mail bcc: '', body: ' JenkinsReport', cc: '', from: '', replyTo: '', subject: 'env.BUILD_NUMBER', to: 'iyad.omryx@gmail.com'
 }
+
+
 
 return this
