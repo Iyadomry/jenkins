@@ -10,14 +10,13 @@ def first() {
             echo ' stage of git'
         }
     }
-    sendmail()
 }
 
 
 
 def sendmail() {
     node('jenkins')
-    mail bcc: '', body: ' JenkinsReport', cc: '', from: '', replyTo: '', subject: 'env.BUILD_NUMBER', to: 'iyad.omryx@gmail.com'
+    mail bcc: '', body: ' JenkinsReport', cc: '', from: '', replyTo: '', subject: 'Jenkins report', to: 'iyad.omryx@gmail.com'
 }
 
 
