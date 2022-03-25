@@ -1,6 +1,15 @@
+import jenkins.model.Jenkins
+
+
 def main() {
-    first()
+    timestamp {
+        first()
+    }
 }
+
+
+
+
 def first() {
     node('jenkins') {
         stage('clone git repo') {
