@@ -4,12 +4,10 @@ def main() {
     }
 }
 
-
-
 def first() {
     node('jenkins') {
         stage('clone git repo') {
-            echo ' stage of git'
+            echo ' welcome here!'
         }
     }
     next()
