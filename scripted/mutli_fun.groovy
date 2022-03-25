@@ -18,7 +18,8 @@ def first() {
 
 def sendmail() {
     node('jenkins') {
-        mail bcc: '', body: "This is build number '${BUILD_NUMBER}'", cc: '', from: '', replyTo: '', subject: "${JOB_NAME}", to: 'iyad.omryx@gmail.com'
+        properties([parameters([string(defaultValue: 'iyad.omryx@gmail.com', name: 'RECIPIAN', trim: true)]), pipelineTriggers([githubPush()])])
+        mail bcc: '', body: "This is build number '${BUILD_NUMBER}'", cc: '', from: '', replyTo: '', subject: "${JOB_NAME}", to: "${RECIPIAN}"
     }
 }
 
