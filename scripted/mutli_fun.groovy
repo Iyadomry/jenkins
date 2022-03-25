@@ -1,24 +1,9 @@
-
-
-
-
-
 def main() {
     timestamps {
         first()
-        yes()
     }
 }
 
-def yes() {
-class Foo {
-    def bar() {
-        println "baz"
-    }
-}
-foo = new Foo()
-foo.bar()
-}
 
 
 def first() {
