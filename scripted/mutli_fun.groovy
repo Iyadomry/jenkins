@@ -1,3 +1,6 @@
+def main() {
+    first()
+}
 def first() {
     node('jenkins') {
         stage('clone git repo') {
