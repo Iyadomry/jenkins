@@ -1,8 +1,6 @@
 
 def main() {
-    timestamp {
-        first()
-    }
+    first()
 }
 
 
