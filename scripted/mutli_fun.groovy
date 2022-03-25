@@ -1,7 +1,6 @@
-import jenkins.model.Jenkins
-
 
 def main() {
+    def timestamp
     timestamp {
         first()
     }
