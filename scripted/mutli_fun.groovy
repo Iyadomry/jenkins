@@ -6,7 +6,7 @@ node ('jenkins') {
     }
 
 def next() {
-    println 'test"
+    echo 'test"
 }
 
 return this
