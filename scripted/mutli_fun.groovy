@@ -6,15 +6,13 @@ def main() {
 }
 
 
-
-
 def first() {
     node('jenkins') {
         stage('clone git repo') {
             echo ' stage of git'
         }
-        next()
     }
+    next()
 }
 
 def next() {
