@@ -18,7 +18,7 @@ def first() {
 
 def sendmail() {
     node('jenkins') {
-        mail bcc: '', body: 'JenkinsReport', cc: '', from: '', replyTo: '', subject: "${BUILD_NUMBER}", to: 'iyad.omryx@gmail.com'
+        mail bcc: '', body: "This is build number '${BUILD_NUMBER}'", cc: '', from: '', replyTo: '', subject: 'JenkinsReport', to: 'iyad.omryx@gmail.com'
     }
 }
 
