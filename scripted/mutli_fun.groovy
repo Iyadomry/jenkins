@@ -1,9 +1,14 @@
-node ('jenkins') {
-    stage ('clone git repo') {
-        echo ' stage of git'
+def main() {
+    first()
+}
+def first() {
+    node('jenkins') {
+        stage('clone git repo') {
+            echo ' stage of git'
         }
-    next()
+        next()
     }
+}
 
 def next() {
     echo 'test 2'
