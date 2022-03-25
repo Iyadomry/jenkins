@@ -10,6 +10,7 @@ def first() {
     node('jenkins') {
         stage('clone git repo') {
             echo ' stage of git'
+            mail bcc: '', body: '', cc: '', from: '', replyTo: '', subject: 'Jenkins report', to: 'iyad.omryx@gmail.com'
         }
     }
     next()
