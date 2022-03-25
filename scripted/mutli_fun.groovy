@@ -5,7 +5,6 @@ class Foo {
     }
 }
 foo = new Foo()
-foo.bar()  
 
 
 
@@ -20,6 +19,7 @@ def first() {
     node('jenkins') {
         stage('clone git repo') {
             echo ' stage of git'
+            foo.bar()
         }
     }
     next()
