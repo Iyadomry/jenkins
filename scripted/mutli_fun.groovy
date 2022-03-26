@@ -11,10 +11,11 @@ def first() {
             def pipeline = load  ("${WORKSPACE}/scripted/app3 scripted/app3docker.groovy")
             pipeline.main()
 
+
             
         }
     }
-
+sendmail()
 }
 
 
