@@ -9,7 +9,7 @@ def first() {
         stage('clone git repo') {
             docker {
                 image 'nginx'
-                args '-p 8080:8080'
+                args '-p 8080:8080' 
             }            
         }
     }
