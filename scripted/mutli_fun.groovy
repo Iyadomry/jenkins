@@ -7,12 +7,10 @@ def main() {
 def first() {
     node('jenkins') {
         stage('clone git repo') {
-            echo ' stage of git'
-            def pipeline = load  ("${WORKSPACE}/scripted/app3 scripted/app3docker.groovy")
-            pipeline.main()
-
-
-            
+            docker {
+                image 'nginx'
+                args '-p 8080:8080'
+            }            
         }
     }
 sendmail()

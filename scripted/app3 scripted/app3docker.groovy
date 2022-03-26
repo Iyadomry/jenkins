@@ -16,6 +16,7 @@ def docker1() {
             }
         catch (Exception) {
             echo ' There is no current containers to delete, try again '
+            currentBuild.result = 'SUCCESS'
             }
 
         stage('Deply my application as a container') {
