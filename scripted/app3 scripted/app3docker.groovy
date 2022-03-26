@@ -15,9 +15,9 @@ def docker1() {
                 }
             }
         catch (Exception) {
-            echo ' Ignore the error Jsut trying to clean old containers'
-            currentBuild.result = 'ABORTED'
+            echo ' There is no current containers to delete, try again '
             }
+
         stage('Deply my application as a container') {
             ansiColor('xterm') {
                 echo "\u001B[31mbuild new container\u001B[0m"
