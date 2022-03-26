@@ -8,7 +8,8 @@ def first() {
     node('jenkins') {
         stage('clone git repo') {
             echo ' stage of git'
-            load ("${WORKSPACE}/scripted/app3 scripted/app3docker.groovy")
+            def pipeline = load  ("${WORKSPACE}/scripted/app3 scripted/app3docker.groovy")
+            pipeline.mamin()
 
             
         }
