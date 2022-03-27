@@ -4,15 +4,14 @@ def main() {
 
 def start() {
     node('jenkins') {
-        ${env.VERSION} = version
+        def ${env.VERSION} = version
         stage(' running if statment') {
             echo ' hello there'
             switch(version) {
-                case 100:
-                    println("this is the default value")
-                    
+                case CASE: [ version != 100 ]
+                    println (" we get the manual inout")
                 break
-                    println("this is the default value")
+                    println (" this the default value and it should be 100 ")
             }
         }
     }
