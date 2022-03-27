@@ -7,13 +7,11 @@ def start() {
         def $VERSION = version
         stage(' running if statment') {
             echo ' hello there'
-            switch($version) {
-                case [ $version !=  "windows" ] :
+            switch(version) {
+                case [ version !=  "windows" ] :
                     println (" we get the manual inout")
-                default:
+                case [ version ==  "windows" ]:
                     println (" this the default value and it should be Windows ")
-                break
-
             }
         }
     }
