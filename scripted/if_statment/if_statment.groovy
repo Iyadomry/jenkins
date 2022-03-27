@@ -4,9 +4,10 @@ def main() {
 
 def start() {
     node('jenkins') {
-        def $VERSION = version
+        def env.VERSION = version
         stage(' running if statment') {
             echo ' hello there'
+            echo "${version}"
             switch(version) {
                 case [ version !=  "windows" ] :
                     println (" we get the manual inout")
