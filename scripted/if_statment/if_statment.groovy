@@ -12,6 +12,7 @@ def start() {
                     println (" we get the manual inout")
                 case [ "${version}" ==  "windows".toString() ]:
                     println (" this the default value and it should be Windows ")
+                break;
             }
         }
     }
