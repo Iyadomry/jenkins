@@ -4,9 +4,8 @@ def main() {
 
 def start() {
     node('jenkins') {
-        def $VERSION = version
         stage(' running if statment') {
-            echo "${version}"
+            def $VERSION = version
             switch("${version}") {
                 case "1":
                     "${version}" !=  "windows".toString() 
