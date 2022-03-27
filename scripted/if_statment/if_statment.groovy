@@ -8,10 +8,10 @@ def start() {
         stage(' running if statment') {
             echo ' hello there'
             switch(version) {
-                case [ version !=  "100" ] :
+                case [ version !=  "windows" ] :
                     println (" we get the manual inout")
                 default:
-                    println (" this the default value and it should be 100 ")
+                    println (" this the default value and it should be Windows ")
                 break
 
             }
