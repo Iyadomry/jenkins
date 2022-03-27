@@ -4,7 +4,7 @@ def main() {
 
 def start() {
     node('jenkins') {
-        def env.VERSION = version
+        def $VERSION = version
         stage(' running if statment') {
             echo ' hello there'
             echo "${version}"
